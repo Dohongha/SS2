@@ -148,4 +148,6 @@ return [
 
     'attributes' => [],
 
+    'exactly-one-upercase-character'=>':attribute has at least 1 upercase character'
+
 ];

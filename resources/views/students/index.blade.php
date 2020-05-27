@@ -31,7 +31,7 @@
                 <a href="javascript:void(0)" onclick="document.getElementById('student-delete-{{ $student->id }}').submit()">
                     <button class="btn btn-danger">Delete</button>
                 </a>
-                <form method="POST" id="post-delete-{{ $student->id }}" action="{{ action('StudentController@destroy', ['student'=>$student]) }}">
+                <form method="POST" id="student-delete-{{ $student->id }}" action="{{ action('StudentController@destroy', ['student'=>$student]) }}">
                     @csrf
                     @method('DELETE')
                 </form>

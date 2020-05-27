@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Student;
+use App\Course;
+use App\Http\Requests\CourseStoreRequest;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
+        $courses = Course::all();
 
-        return view('students.index', compact('students'));
+        return view ('courses.index', compact('courses'));
     }
 
     /**
@@ -27,9 +27,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $student = new Student();
+        $course = new Course();
 
-        return view('students.create', compact('student'));
+        return view ('course.create', compact('course'));
     }
 
     /**
@@ -38,48 +38,55 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CourseStoreRequest $request)
     {
-        
-        Student::create($request->input());
+        Course::create($request->input());
 
-        return redirect()->action('StudentController@index');
+        return redirect()->action('CourseController@index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit($id)
     {
-        return view('students.edit',compact('student'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
     {
-        $student ->update($request->input());
-        $student->save(); //persist the data
-        return redirect()->action('StudentController@index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Student  $student
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
-        $student->delete();
-        return redirect()->action('StudentController@index');
+        //
     }
 }

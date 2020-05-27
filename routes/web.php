@@ -18,4 +18,4 @@ Route::get('/', function () {
 });
 Route::resource('students', 'StudentController');
 
-
+Route::resource('courses', 'CourseController');
