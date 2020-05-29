@@ -15,8 +15,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
-
+        // cach 1
+        // $students = Student::with('course')->get();
+        // cach 2
+        $students = Student::all()->load('course');
         return view('students.index', compact('students'));
     }
 

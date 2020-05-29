@@ -14,6 +14,7 @@
         <td>Name</td>
         <td>PhoneNumber</td>
         <td>Address</td>
+        <td>Course</td>
         <td>Actions</td>
     </tr>
 
@@ -24,6 +25,7 @@
             <td>{{ $student->name }}</td>
             <td>{{ $student->phonenumber }}</td>
             <td>{{ $student->address }}</td>
+            <td>{{ $student->course->name}}</td>
             <td>
                 <a href="{{ action('StudentController@edit', ['student' => $student]) }}">
                     <button class="btn btn-warning">Edit</button>

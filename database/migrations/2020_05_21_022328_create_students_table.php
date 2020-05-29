@@ -15,13 +15,13 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 30);
-            $table->string('phonenumber', 20);
-            $table->string('address', 30);
+            $table->string('name');
+            $table->string('phonenumber');
+            $table->string('address');
             $table->unsignedBigInteger('course_id');
             $table->timestamps();
 
-            $table->foreign('course_id')->refernces('id')->on('courses');
+            $table->foreign('course_id')->references('id')->on('courses');
         });
     }
 

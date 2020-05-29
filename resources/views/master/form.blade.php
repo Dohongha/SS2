@@ -23,3 +23,11 @@
     <input type="text" id="address" name="address" value="{{ $student->address }}"/>
 
 </div>
+
+<div>
+
+    <label for="address">Course</label></label>
+
+    <input type="text" id="course" name="course" value="{{ $student->course->name }}"/>
+
+</div>

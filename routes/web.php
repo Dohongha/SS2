@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::resource('students', 'StudentController');
 
 Route::resource('courses', 'CourseController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
